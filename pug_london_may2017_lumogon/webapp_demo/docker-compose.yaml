@@ -1,0 +1,15 @@
+balancer:
+    build: ./balancer
+    links:
+        - app1:app1
+        - app2:app2
+    ports:
+        - "80:80"
+app1:
+    build: ./goapp
+    ports:
+        - "80"
+app2:
+    build: ./goapp
+    ports:
+        - "80"
